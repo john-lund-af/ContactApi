@@ -1,6 +1,7 @@
 {
   "contacts": [
     {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
       "first_name": "Anna",
       "last_name": "Svensson",
       "notes": "Gammal kollega",
@@ -22,6 +23,7 @@
       ]
     },
     {
+      "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
       "first_name": "Erik",
       "last_name": "Johansson",
       "notes": "Tränar på samma gym",
@@ -48,6 +50,7 @@
       ]
     },
     {
+      "id": "16fd2706-8baf-433b-82eb-8c7fada847da",
       "first_name": "Maria",
       "last_name": "Lindberg",
       "notes": "Kusin från Malmö",
@@ -75,6 +78,7 @@
       ]
     },
     {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
       "first_name": "John",
       "last_name": "Doe",
       "notes": "Met during a tech conference",
@@ -96,6 +100,7 @@
       ]
     },
     {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
       "first_name": "Sofia",
       "last_name": "Andersson",
       "notes": "Frontend developer",

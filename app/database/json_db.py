@@ -1,8 +1,6 @@
 import json
 from pathlib import Path
 
-#from app.database.base import DBInterface
-
 class JsonDB:
 
     def __init__(self, file_path: str = "/app/db/contacts.json"):

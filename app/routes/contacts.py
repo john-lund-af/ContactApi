@@ -1,11 +1,23 @@
 from fastapi import APIRouter, HTTPException
+from app.database.json_db import JsonDB
+from app.repositories.contacts_repo import ContactRepository, ContactNotFoundError
 
 router = APIRouter()
+contact_repo = ContactRepository(JsonDB())
+
 
 @router.get("/")
 def get_contacts():
-    pass
+    try:
+        return contact_repo.get_all()
+    except Exception:
+        raise HTTPException(status_code=500, detail="Failed to fetch contacts")
+
 
 @router.get("/{contact_id}")
 def get_contact(contact_id):
-    pass
+    try:
+        return contact_repo.get_contact(contact_id)
+    except ContactNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+

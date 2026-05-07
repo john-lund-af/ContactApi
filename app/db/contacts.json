@@ -1,0 +1,125 @@
+{
+  "contacts": [
+    {
+      "first_name": "Anna",
+      "last_name": "Svensson",
+      "notes": "Gammal kollega",
+      "favorite": true,
+      "contact_infos": [
+        {
+          "type": "private",
+          "phone": "0701234567",
+          "email": "anna@example.com"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "home",
+          "street": "Storgatan 1",
+          "city": "Stockholm",
+          "country": "Sweden"
+        }
+      ]
+    },
+    {
+      "first_name": "Erik",
+      "last_name": "Johansson",
+      "notes": "Tränar på samma gym",
+      "favorite": false,
+      "contact_infos": [
+        {
+          "type": "private",
+          "phone": "0739876543",
+          "email": "erik.j@example.com"
+        },
+        {
+          "type": "work",
+          "phone": "081234567",
+          "email": "erik.johansson@company.se"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "home",
+          "street": "Björkgatan 12",
+          "city": "Göteborg",
+          "country": "Sweden"
+        }
+      ]
+    },
+    {
+      "first_name": "Maria",
+      "last_name": "Lindberg",
+      "notes": "Kusin från Malmö",
+      "favorite": true,
+      "contact_infos": [
+        {
+          "type": "private",
+          "phone": "0724455667",
+          "email": "maria.l@example.com"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "home",
+          "street": "Södra Vägen 45",
+          "city": "Malmö",
+          "country": "Sweden"
+        },
+        {
+          "type": "vacation",
+          "street": "Playa Street 22",
+          "city": "Alicante",
+          "country": "Spain"
+        }
+      ]
+    },
+    {
+      "first_name": "John",
+      "last_name": "Doe",
+      "notes": "Met during a tech conference",
+      "favorite": false,
+      "contact_infos": [
+        {
+          "type": "work",
+          "phone": "+1-202-555-0187",
+          "email": "john.doe@example.com"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "office",
+          "street": "5th Avenue 100",
+          "city": "New York",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "first_name": "Sofia",
+      "last_name": "Andersson",
+      "notes": "Frontend developer",
+      "favorite": true,
+      "contact_infos": [
+        {
+          "type": "private",
+          "phone": "0761122334",
+          "email": "sofia@example.com"
+        },
+        {
+          "type": "linkedin",
+          "phone": "",
+          "email": "sofia.dev@linkedin.com"
+        }
+      ],
+      "addresses": [
+        {
+          "type": "home",
+          "street": "Hamngatan 8",
+          "city": "Uppsala",
+          "country": "Sweden"
+        }
+      ]
+    }
+  ]
+}

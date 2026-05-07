@@ -1,12 +1,15 @@
 from fastapi import FastAPI
 from datetime import datetime, timezone, timedelta
 from scalar_fastapi import get_scalar_api_reference
+from app.routes import contacts
 
 app = FastAPI(
     title="Contact API",
     description="REST API for a contact application",
     version="1.0.0"
 )
+
+app.include_router(contacts.router, prefix="/contacts", tags=["contacts"])
 
 start_time: datetime = datetime.now(timezone.utc)
 

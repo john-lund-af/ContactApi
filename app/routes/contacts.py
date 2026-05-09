@@ -21,3 +21,7 @@ def get_contact(contact_id):
     except ContactNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc))
 
+
+@router.post("/")
+def create_contact(contact: dict):
+    return contact_repo.create_contact(contact)

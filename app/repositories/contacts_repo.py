@@ -1,5 +1,5 @@
 from app.database.json_db import JsonDB
-
+from uuid import uuid4
 
 class ContactNotFoundError(Exception):
     pass
@@ -23,3 +23,19 @@ class ContactRepository:
                 return contact
         else:
             raise ContactNotFoundError(f"Contact with id {contact_id} not found")
+
+
+    def create_contact(self, contact_data: dict) -> dict:
+        data = self.db.load()
+
+        new_id = str(uuid4())
+        new_contact = {
+            "id": new_id,
+            **contact_data
+        }
+
+        data["contacts"].append(new_contact)
+        self.db.save(data)
+
+        return new_contact
+

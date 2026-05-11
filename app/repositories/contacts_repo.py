@@ -39,3 +39,30 @@ class ContactRepository:
 
         return new_contact
 
+
+    def remove_contact(self, contact_id: str):
+        data = self.db.load()
+
+        contact = next((contact for contact in data["contacts"] if contact["id"] == contact_id), None)
+
+        if contact is None:
+            raise ContactNotFoundError(f"Contact with id {contact_id} not found")
+
+        data["contacts"].remove(contact)
+        self.db.save(data)
+        return contact
+
+
+    # def remove_user(self, user_id: str):
+    #     data = self.db.load()
+    #
+    #     user = next((user for user in data["users"] if user["id"] == user_id), None)
+    #     self.db.save(data)
+    #
+    #     if user is None:
+    #         raise UserNotFoundError(f"User with id {user_id} not found")
+    #
+    #     data["users"].remove(user)
+    #     self.db.save(data)
+    #
+    #     return user

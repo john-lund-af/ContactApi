@@ -25,3 +25,13 @@ def get_contact(contact_id):
 @router.post("/")
 def create_contact(contact: dict):
     return contact_repo.create_contact(contact)
+
+
+@router.delete("/{contact_id}")
+def delete_contact(contact_id: str):
+    try:
+        return contact_repo.remove_contact(contact_id)
+    except ContactNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+

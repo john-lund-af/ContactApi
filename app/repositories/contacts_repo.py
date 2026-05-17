@@ -68,3 +68,35 @@ class ContactRepository:
 
         raise ContactNotFoundError(f"Contact with id {contact_id} not found")
 
+
+    def search_contacts(self, query_str: str) -> list[dict]:
+        """
+        Retrieves contacts that contain the query string in any of the string properties of the contact
+        :param query_str: A string with the content to search for
+        :return: A list with contacts that had the content of the searched string
+        """
+        data = self.db.load()
+        result = []
+
+        def contains_query(value) -> bool:
+            if isinstance(value, str):
+                return query_str in value.lower()
+
+            if isinstance(value, dict):
+                for item in value.values():
+                    if contains_query(item):
+                        return True
+
+            if isinstance(value, list):
+                for item in value:
+                    if contains_query(item):
+                        return True
+
+            return False
+
+        for contact in data["contacts"]:
+            if contains_query(contact):
+                result.append(contact)
+
+        return result
+

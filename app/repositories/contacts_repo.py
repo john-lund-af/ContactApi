@@ -53,16 +53,18 @@ class ContactRepository:
         return contact
 
 
-    # def remove_user(self, user_id: str):
-    #     data = self.db.load()
-    #
-    #     user = next((user for user in data["users"] if user["id"] == user_id), None)
-    #     self.db.save(data)
-    #
-    #     if user is None:
-    #         raise UserNotFoundError(f"User with id {user_id} not found")
-    #
-    #     data["users"].remove(user)
-    #     self.db.save(data)
-    #
-    #     return user
+    def update_contact(self, contact_id: str, new_contact_data: dict):
+        data = self.db.load()
+
+        for index, contact in enumerate(data["contacts"]):
+            if contact_id == contact["id"]:
+                updated_contact = {
+                    "id": contact_id,
+                    **new_contact_data
+                }
+                data["contacts"][index] = updated_contact
+                self.db.save(data)
+                return updated_contact
+
+        raise ContactNotFoundError(f"Contact with id {contact_id} not found")
+

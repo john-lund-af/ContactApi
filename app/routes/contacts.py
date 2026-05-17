@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from app.database.json_db import JsonDB
+from app.repositories import contacts_repo
 from app.repositories.contacts_repo import ContactRepository, ContactNotFoundError
 
 router = APIRouter()
@@ -34,4 +35,11 @@ def delete_contact(contact_id: str):
     except ContactNotFoundError as exc:
         raise HTTPException(status_code=404, detail=str(exc))
 
+
+@router.put("/{contact_id}")
+def update_contact(contact_id, updated_contact: dict):
+    try:
+        return contact_repo.update_contact(contact_id, updated_contact)
+    except ContactNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
 

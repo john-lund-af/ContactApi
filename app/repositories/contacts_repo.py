@@ -1,3 +1,4 @@
+from datetime import datetime
 from app.database.json_db import JsonDB
 from uuid import uuid4
 
@@ -27,10 +28,13 @@ class ContactRepository:
 
     def create_contact(self, contact_data: dict) -> dict:
         data = self.db.load()
-
         new_id = str(uuid4())
+        now:str = datetime.now().isoformat()
+
         new_contact = {
             "id": new_id,
+            "created_at": now,
+            "updated_at": now,
             **contact_data
         }
 
@@ -58,8 +62,12 @@ class ContactRepository:
 
         for index, contact in enumerate(data["contacts"]):
             if contact_id == contact["id"]:
+                now: str = datetime.now().isoformat()
+
                 updated_contact = {
                     "id": contact_id,
+                    "created_at": contact["created_at"],
+                    "updated_at": now,
                     **new_contact_data
                 }
                 data["contacts"][index] = updated_contact

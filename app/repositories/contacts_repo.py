@@ -31,7 +31,6 @@ class ContactRepository:
 
     def create_contact(self, contact_data: ContactCreate) -> Contact:
         data = self.db.load()
-        new_id = str(uuid4())
         now = datetime.now()
 
         new_contact = Contact(id=uuid4(), created_at=now, updated_at=now, **contact_data.model_dump())
@@ -82,6 +81,10 @@ class ContactRepository:
         """
         data = self.db.load()
         result = []
+        query_str = query_str.lower().strip()
+
+        if not query_str:
+            return []
 
         def contains_query(value) -> bool:
             if isinstance(value, str):

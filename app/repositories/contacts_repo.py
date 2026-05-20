@@ -1,6 +1,7 @@
 from datetime import datetime
 from app.database.json_db import JsonDB
-from uuid import uuid4
+from uuid import uuid4, UUID
+
 from app.models.contact_models import ContactCreate, Contact
 
 
@@ -18,7 +19,7 @@ class ContactRepository:
         return data["contacts"]
 
 
-    def get_contact(self, contact_id: str) -> dict:
+    def get_contact(self, contact_id: UUID) -> dict:
         data = self.db.load()
 
         for contact in data["contacts"]:
@@ -41,7 +42,7 @@ class ContactRepository:
         return new_contact
 
 
-    def remove_contact(self, contact_id: str):
+    def remove_contact(self, contact_id: UUID) -> dict | None:
         data = self.db.load()
 
         contact = next((contact for contact in data["contacts"] if contact["id"] == contact_id), None)

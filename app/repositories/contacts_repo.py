@@ -23,7 +23,7 @@ class ContactRepository:
         data = self.db.load()
 
         for contact in data["contacts"]:
-            if contact["id"] == contact_id:
+            if UUID(contact["id"]) == contact_id:
                 return contact
         else:
             raise ContactNotFoundError(f"Contact with id {contact_id} not found")
@@ -45,7 +45,7 @@ class ContactRepository:
     def remove_contact(self, contact_id: UUID) -> dict | None:
         data = self.db.load()
 
-        contact = next((contact for contact in data["contacts"] if contact["id"] == contact_id), None)
+        contact = next((contact for contact in data["contacts"] if UUID(contact["id"]) == contact_id), None)
 
         if contact is None:
             raise ContactNotFoundError(f"Contact with id {contact_id} not found")

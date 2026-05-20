@@ -1,7 +1,7 @@
 from uuid import UUID
 from fastapi import APIRouter, HTTPException, Query
 from app.database.json_db import JsonDB
-from app.models.contact_models import Contact, ContactCreate
+from app.models.contact_models import Contact, ContactCreate, ContactUpdate
 from app.repositories import contacts_repo
 from app.repositories.contacts_repo import ContactRepository, ContactNotFoundError
 
@@ -55,8 +55,8 @@ def delete_contact(contact_id: UUID):
         raise HTTPException(status_code=404, detail=str(exc))
 
 
-@router.put("/{contact_id}")
-def update_contact(contact_id, updated_contact: dict):
+@router.put("/{contact_id}", response_model=Contact)
+def update_contact(contact_id: UUID, updated_contact: ContactUpdate):
     try:
         return contact_repo.update_contact(contact_id, updated_contact)
     except ContactNotFoundError as exc:

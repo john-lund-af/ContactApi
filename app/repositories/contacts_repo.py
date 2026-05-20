@@ -2,7 +2,7 @@ from datetime import datetime
 from app.database.json_db import JsonDB
 from uuid import uuid4, UUID
 
-from app.models.contact_models import ContactCreate, Contact
+from app.models.contact_models import ContactCreate, Contact, ContactUpdate
 
 
 class ContactNotFoundError(Exception):
@@ -55,20 +55,19 @@ class ContactRepository:
         return contact
 
 
-    def update_contact(self, contact_id: str, new_contact_data: dict):
+    def update_contact(self, contact_id: UUID, new_contact_data: ContactUpdate) -> Contact:
         data = self.db.load()
 
         for index, contact in enumerate(data["contacts"]):
-            if contact_id == contact["id"]:
-                now: str = datetime.now().isoformat()
+            if contact_id == UUID(contact["id"]):
+                now = datetime.now()
 
-                updated_contact = {
-                    "id": contact_id,
-                    "created_at": contact["created_at"],
-                    "updated_at": now,
-                    **new_contact_data
-                }
-                data["contacts"][index] = updated_contact
+                updated_contact = Contact(id=contact_id,
+                                          created_at=contact["created_at"],
+                                          updated_at=now,
+                                          **new_contact_data.model_dump())
+
+                data["contacts"][index] = updated_contact.model_dump(mode="json")
                 self.db.save(data)
                 return updated_contact
 

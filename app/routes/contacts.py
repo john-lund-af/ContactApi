@@ -47,7 +47,7 @@ def create_contact(contact: ContactCreate):
         raise HTTPException(status_code=500, detail="Internal error creating contact")
 
 
-@router.delete("/{contact_id}")
+@router.delete("/{contact_id}", response_model=Contact)
 def delete_contact(contact_id: UUID):
     try:
         return contact_repo.remove_contact(contact_id)

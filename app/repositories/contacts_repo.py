@@ -1,6 +1,8 @@
 from datetime import datetime
 from app.database.json_db import JsonDB
 from uuid import uuid4
+from app.models.contact_models import ContactCreate, Contact
+
 
 class ContactNotFoundError(Exception):
     pass
@@ -26,19 +28,14 @@ class ContactRepository:
             raise ContactNotFoundError(f"Contact with id {contact_id} not found")
 
 
-    def create_contact(self, contact_data: dict) -> dict:
+    def create_contact(self, contact_data: ContactCreate) -> Contact:
         data = self.db.load()
         new_id = str(uuid4())
-        now:str = datetime.now().isoformat()
+        now = datetime.now()
 
-        new_contact = {
-            "id": new_id,
-            "created_at": now,
-            "updated_at": now,
-            **contact_data
-        }
+        new_contact = Contact(id=uuid4(), created_at=now, updated_at=now, **contact_data.model_dump())
 
-        data["contacts"].append(new_contact)
+        data["contacts"].append(new_contact.model_dump(mode="json"))
         self.db.save(data)
 
         return new_contact

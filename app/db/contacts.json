@@ -1,130 +1,157 @@
 {
-  "contacts": [
-    {
-      "id": "550e8400-e29b-41d4-a716-446655440000",
-      "first_name": "Anna",
-      "last_name": "Svensson",
-      "notes": "Gammal kollega",
-      "favorite": true,
-      "contact_infos": [
+    "contacts": [
         {
-          "type": "private",
-          "phone": "0701234567",
-          "email": "anna@example.com"
-        }
-      ],
-      "addresses": [
-        {
-          "type": "home",
-          "street": "Storgatan 1",
-          "city": "Stockholm",
-          "country": "Sweden"
-        }
-      ]
-    },
-    {
-      "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
-      "first_name": "Erik",
-      "last_name": "Johansson",
-      "notes": "Tränar på samma gym",
-      "favorite": false,
-      "contact_infos": [
-        {
-          "type": "private",
-          "phone": "0739876543",
-          "email": "erik.j@example.com"
+            "id": "16fd2706-8baf-433b-82eb-8c7fada847da",
+            "first_name": "Maria",
+            "last_name": "Lindberg",
+            "notes": "Kusin fr\u00e5n Malm\u00f6",
+            "favorite": true,
+            "created_at": "2026-03-11T08:00:00",
+            "updated_at": "2026-05-01T12:10:00",
+            "contact_infos": [
+                {
+                    "type": "private",
+                    "phone": "0724455667",
+                    "email": "maria.l@example.com"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "home",
+                    "street": "S\u00f6dra V\u00e4gen 45",
+                    "city": "Malm\u00f6",
+                    "country": "Sweden"
+                },
+                {
+                    "type": "vacation",
+                    "street": "Playa Street 22",
+                    "city": "Alicante",
+                    "country": "Spain"
+                }
+            ]
         },
         {
-          "type": "work",
-          "phone": "081234567",
-          "email": "erik.johansson@company.se"
-        }
-      ],
-      "addresses": [
-        {
-          "type": "home",
-          "street": "Björkgatan 12",
-          "city": "Göteborg",
-          "country": "Sweden"
-        }
-      ]
-    },
-    {
-      "id": "16fd2706-8baf-433b-82eb-8c7fada847da",
-      "first_name": "Maria",
-      "last_name": "Lindberg",
-      "notes": "Kusin från Malmö",
-      "favorite": true,
-      "contact_infos": [
-        {
-          "type": "private",
-          "phone": "0724455667",
-          "email": "maria.l@example.com"
-        }
-      ],
-      "addresses": [
-        {
-          "type": "home",
-          "street": "Södra Vägen 45",
-          "city": "Malmö",
-          "country": "Sweden"
+            "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+            "first_name": "John",
+            "last_name": "Doe",
+            "notes": "Met during a tech conference",
+            "favorite": false,
+            "created_at": "2026-01-28T16:40:00",
+            "updated_at": "2026-05-12T09:05:00",
+            "contact_infos": [
+                {
+                    "type": "work",
+                    "phone": "+1-202-555-0187",
+                    "email": "john.doe@example.com"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "office",
+                    "street": "5th Avenue 100",
+                    "city": "New York",
+                    "country": "USA"
+                }
+            ]
         },
         {
-          "type": "vacation",
-          "street": "Playa Street 22",
-          "city": "Alicante",
-          "country": "Spain"
-        }
-      ]
-    },
-    {
-      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
-      "first_name": "John",
-      "last_name": "Doe",
-      "notes": "Met during a tech conference",
-      "favorite": false,
-      "contact_infos": [
-        {
-          "type": "work",
-          "phone": "+1-202-555-0187",
-          "email": "john.doe@example.com"
-        }
-      ],
-      "addresses": [
-        {
-          "type": "office",
-          "street": "5th Avenue 100",
-          "city": "New York",
-          "country": "USA"
-        }
-      ]
-    },
-    {
-      "id": "123e4567-e89b-12d3-a456-426614174000",
-      "first_name": "Sofia",
-      "last_name": "Andersson",
-      "notes": "Frontend developer",
-      "favorite": true,
-      "contact_infos": [
-        {
-          "type": "private",
-          "phone": "0761122334",
-          "email": "sofia@example.com"
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "first_name": "Sosza",
+            "last_name": "Tkaczyk",
+            "notes": "Frontend developer",
+            "favorite": true,
+            "created_at": "2026-04-03T13:20:00",
+            "updated_at": "2026-05-15T20:30:00",
+            "contact_infos": [
+                {
+                    "type": "private",
+                    "phone": "0761122334",
+                    "email": "sofia@example.com"
+                },
+                {
+                    "type": "linkedin",
+                    "phone": "",
+                    "email": "sofia.dev@linkedin.com"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "home",
+                    "street": "Hamngatan 8",
+                    "city": "Uppsala",
+                    "country": "Poland"
+                }
+            ]
         },
         {
-          "type": "linkedin",
-          "phone": "",
-          "email": "sofia.dev@linkedin.com"
-        }
-      ],
-      "addresses": [
+            "id": "0e57a602-6673-43ec-8842-d04ae6138ebc",
+            "created_at": "2026-05-18T07:17:12.728370",
+            "updated_at": "2026-05-18T07:25:34.206757",
+            "first_name": "Lucas",
+            "last_name": "Bergstr\u00f6m",
+            "notes": "Met at Python conference in Stockholm",
+            "favorite": true,
+            "contact_infos": [
+                {
+                    "type": "private",
+                    "phone": "0709988776",
+                    "email": "lucas@example.com"
+                },
+                {
+                    "type": "work",
+                    "phone": "0811122233",
+                    "email": "lucas.bergstrom@techcorp.se"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "home",
+                    "street": "Kungsgatan 15",
+                    "city": "Stockholm",
+                    "country": "Sweden"
+                },
+                {
+                    "type": "work",
+                    "street": "Tech Park 4",
+                    "city": "Solna",
+                    "country": "Sweden"
+                }
+            ]
+        },
         {
-          "type": "home",
-          "street": "Hamngatan 8",
-          "city": "Uppsala",
-          "country": "Sweden"
+            "first_name": "Elina",
+            "last_name": "Karlsson-Smith",
+            "notes": "Promoted to Lead UX Designer and recently moved to Gothenburg",
+            "favorite": true,
+            "contact_infos": [
+                {
+                    "type": "private",
+                    "phone": "0734455999",
+                    "email": "elina.new@example.com"
+                },
+                {
+                    "type": "work",
+                    "phone": "087654321",
+                    "email": "elina.smith@designhub.se"
+                }
+            ],
+            "addresses": [
+                {
+                    "type": "home",
+                    "street": "Havsgatan 14",
+                    "city": "G\u00f6teborg",
+                    "country": "Sweden"
+                },
+                {
+                    "type": "work",
+                    "street": "Creative Studio 21",
+                    "city": "G\u00f6teborg",
+                    "country": "Sweden"
+                }
+            ],
+            "id": "7d84cc59-f40c-4533-a9d8-45265afbdc61",
+            "created_at": "2026-05-20T05:40:47.247173",
+            "updated_at": "2026-05-20T07:36:01.182211"
         }
-      ]
-    }
-  ]
+    ]
 }
